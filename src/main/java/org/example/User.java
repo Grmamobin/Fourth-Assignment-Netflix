@@ -11,7 +11,7 @@ class User {
     */
     private String username;
     private String password;
-    ArrayList<TVShow> favoritShowList;
+    ArrayList<TVShow> favoriteShowList;
     ArrayList<TVShow> watchHistoryList;
     ArrayList<User> user;
     ArrayList<TVShow> tvShowList;
@@ -38,12 +38,13 @@ class User {
         this.password = password;
     }
 
-    public void watchShow(){
-
+    public void watchShow(TVShow tvShow){
+        watchHistoryList.add(tvShow);
     }
 
-    public ArrayList<String> WatchHistory() {
-        return null;
+    public void WatchHistory() {
+        System.out.println("History :");
+        System.out.println(watchHistoryList);
     }
 
     public ArrayList<TVShow> searchByTitle(String title) {
@@ -84,15 +85,18 @@ class User {
     }
     public void addToFavorites(TVShow show) {
         // Implement add to favorites logic here
-        favoritShowList.add(show);
+        favoriteShowList.add(show);
 
     }
     public void viewFavorites() {
         // Implement view favorites logic here
-        System.out.print(favoritShowList);
+        System.out.print("Your favorites are :\n" + favoriteShowList);
     }
     public ArrayList<TVShow> getRecommendations() {
         // Implement get recommendations logic here
-        return null;
+        System.out.println("Suggested : ");
+        //not complete------------>
+        System.out.println("fiction movie / horror movie / drum movie / comedy / advanture");
+      return null;
     }
 }
