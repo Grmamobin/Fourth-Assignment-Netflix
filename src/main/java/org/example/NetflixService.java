@@ -1,27 +1,41 @@
 package org.example;
-
 import java.util.ArrayList;
 
-class NetflixService {
+class NetflixService  {
     /*
      *The NetflixService should have an Arraylist of users, tv shows and movies.
      *The NetflixService should have a User object which represents current user.
      */
+    ArrayList<User> user;
+    ArrayList<TVShow> tvShowList;
+    ArrayList<Movie> movieList;
+    Object User;
+
+    private NetflixService(){
+       this.User = new ArrayList<>();
+        this.tvShowList = new ArrayList<>();
+        this.movieList= new ArrayList<>();
+    }
 
     public void addTVShow(TVShow tvShow){
         // Implement add tv show logic here
+        tvShowList.add(tvShow);
+
     }
 
     public void addMovie(Movie movie){
         // Implement add movie logic here
+        movieList.add(movie);
     }
 
     public void createAccount(String username, String password) {
         // Implement create account logic here
+
     }
 
     public boolean login(String username, String password) {
         // Implement login logic here
+
         return false;
     }
 
@@ -31,17 +45,42 @@ class NetflixService {
 
     public ArrayList<TVShow> searchByTitle(String title) {
         // Implement search by title logic here
-        return null;
+        ArrayList<TVShow> result = new ArrayList<>();
+        for (TVShow tvShow : tvShowList)
+        {
+            if(title.compareTo(tvShow.getTitle())== 0)
+            {
+                result.add(tvShow);
+            }
+        }
+        return result;
+
     }
 
     public ArrayList<TVShow> searchByGenre(String genre) {
         // Implement search by genre logic here
-        return null;
+        ArrayList<TVShow> result = new ArrayList<>();
+        for (TVShow tvShow : tvShowList)
+        {
+            if(genre.compareTo(tvShow.getGenre())== 0)
+            {
+                result.add(tvShow);
+            }
+        }
+        return result;
     }
 
     public ArrayList<TVShow> searchByReleaseYear(int year) {
         // Implement search by release year logic here
-        return null;
+        ArrayList<TVShow> result = new ArrayList<>();
+        for (TVShow tvShow : tvShowList)
+        {  //cause this is int and can't use compare method
+            if(year == tvShow.getReleaseYear())
+            {
+                result.add(tvShow);
+            }
+        }
+        return result;
     }
 
 
