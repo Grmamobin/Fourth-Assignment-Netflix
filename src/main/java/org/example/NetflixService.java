@@ -6,7 +6,7 @@ class NetflixService  {
      *The NetflixService should have an Arraylist of users, tv shows and movies.
      *The NetflixService should have a User object which represents current user.
      */
-    ArrayList<User> user;
+    ArrayList<User> userList;
     ArrayList<TVShow> tvShowList;
     ArrayList<Movie> movieList;
     Object User;
@@ -31,10 +31,30 @@ class NetflixService  {
     public void createAccount(String username, String password) {
         // Implement create account logic here
 
+        for( User user : userList )
+        {
+            if(username.equalsIgnoreCase(user.getUsername())){
+                User user1 = new User(username , password);
+                userList.add(user1);
+                System.out.println("add successfully");
+                return;
+            }
+
+        }
+
     }
 
     public boolean login(String username, String password) {
         // Implement login logic here
+        for( User user : userList )
+        {
+            if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
+
+                System.out.println("you have an account");
+                return true;
+            }
+
+        }
 
         return false;
     }
