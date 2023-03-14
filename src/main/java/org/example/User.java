@@ -13,7 +13,7 @@ class User {
     private String password;
     ArrayList<TVShow> favoriteShowList;
     ArrayList<TVShow> watchHistoryList;
-    ArrayList<User> user;
+    ArrayList<User> userList;
     ArrayList<TVShow> tvShowList;
     ArrayList<Movie> movieList;
 
@@ -95,7 +95,7 @@ class User {
     public ArrayList<TVShow> getRecommendations() {
         // Implement get recommendations logic here
         System.out.println("Suggested : ");
-        //not complete------------>
+        //not complete-based on genra----------->
         System.out.println("fiction movie / horror movie / drum movie / comedy / advanture");
       return null;
     }

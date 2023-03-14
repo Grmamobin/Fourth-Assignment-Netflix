@@ -14,12 +14,14 @@ class TVShow {
     private double rating;
     ArrayList<String> cast;
 
-    public TVShow(String title , String genre ,double releaseYear , String duration , double rating ){
+    public TVShow(String title , String genre , double releaseYear , String duration , double rating ,
+                  ArrayList<String> cast){
         this.title = title;
         this.genre = genre;
         this.releaseYear = releaseYear;
         this.duration = duration;
         this.rating = rating;
+        this.cast = new ArrayList<>();
     }
 
     public String getTitle() {
@@ -34,5 +36,39 @@ class TVShow {
         return releaseYear;
     }
 
+    public String getDuration() {
+        return duration;
+    }
 
+    public double getRating() {
+        return rating;
+    }
+
+    public ArrayList<String> getCast() {
+        return cast;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setReleaseYear(double releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public void setCast(ArrayList<String> cast) {
+        this.cast = cast;
+    }
 }

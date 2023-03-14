@@ -9,12 +9,12 @@ class NetflixService  {
     ArrayList<User> userList;
     ArrayList<TVShow> tvShowList;
     ArrayList<Movie> movieList;
-    Object User;
+    private User user;
 
     private NetflixService(){
-       this.User = new ArrayList<>();
-        this.tvShowList = new ArrayList<>();
-        this.movieList= new ArrayList<>();
+       this.userList = new ArrayList<>();
+       this.tvShowList = new ArrayList<>();
+       this.movieList= new ArrayList<>();
     }
 
     public void addTVShow(TVShow tvShow){
@@ -61,6 +61,8 @@ class NetflixService  {
 
     public void logout() {
         // Implement logout logic here
+        System.out.println("Hop you're Entertaining");
+        return;
     }
 
     public ArrayList<TVShow> searchByTitle(String title) {
@@ -103,6 +105,12 @@ class NetflixService  {
         return result;
     }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
 
