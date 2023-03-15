@@ -21,7 +21,7 @@ class TVShow {
         this.releaseYear = releaseYear;
         this.duration = duration;
         this.rating = rating;
-        this.cast = new ArrayList<>();
+        this.cast = cast;
     }
 
     public String getTitle() {
