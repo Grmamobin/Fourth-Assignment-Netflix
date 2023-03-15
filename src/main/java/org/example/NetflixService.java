@@ -112,5 +112,15 @@ class NetflixService  {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "NetflixService{" +
+                "userList=" + userList +
+                ", tvShowList=" + tvShowList +
+                ", movieList=" + movieList +
+                ", user=" + user +
+                '}';
+    }
 }
 

@@ -9,12 +9,12 @@ class TVShow {
      */
     private String title;
     private String genre;
-    private double releaseYear;
+    private int  releaseYear;
     private String duration;
-    private double rating;
+    private String rating;
     ArrayList<String> cast;
 
-    public TVShow(String title , String genre , double releaseYear , String duration , double rating ,
+    public TVShow(String title , String genre ,int releaseYear , String duration , String rating ,
                   ArrayList<String> cast){
         this.title = title;
         this.genre = genre;
@@ -32,7 +32,7 @@ class TVShow {
         return genre;
     }
 
-    public double getReleaseYear() {
+    public int getReleaseYear() {
         return releaseYear;
     }
 
@@ -40,7 +40,7 @@ class TVShow {
         return duration;
     }
 
-    public double getRating() {
+    public String getRating() {
         return rating;
     }
 
@@ -56,7 +56,7 @@ class TVShow {
         this.genre = genre;
     }
 
-    public void setReleaseYear(double releaseYear) {
+    public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
 
@@ -64,11 +64,23 @@ class TVShow {
         this.duration = duration;
     }
 
-    public void setRating(double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
     public void setCast(ArrayList<String> cast) {
         this.cast = cast;
+    }
+
+    @Override
+    public String toString() {
+        return "TVShow{" +
+                "title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", duration='" + duration + '\'' +
+                ", rating='" + rating + '\'' +
+                ", cast=" + cast +
+                '}';
     }
 }
