@@ -6,10 +6,11 @@ class Movie extends TVShow {
   /*
    *Movie is extended from TVShow and has extra attribute length.
    */
-  private ArrayList<String> length;
+  private final ArrayList<String> length;
+
   public Movie(String title , String genre , int releaseYear , String duration , String rating , ArrayList<String> cast,ArrayList<String> length) {
 
-    super(title,genre,releaseYear,duration,rating, cast);
+    super(title,genre,releaseYear,duration,rating , cast);
     this.length = length;
 
   }
@@ -20,7 +21,8 @@ class Movie extends TVShow {
 
   @Override
   public String toString() {
-    return "Movie{title=" + getTitle() + "    genre="+getGenre()+  "   releaseYear=" + getReleaseYear()+"   duration="+getDuration()+"  rating="+getRating()+
+    return "Movie{title=" + getTitle() + "    genre="+getGenre()+  "   releaseYear=" + getReleaseYear()+
+            "   duration="+getDuration()+"  rating="+getRating()+
             "   cast="+getCast() +   "   length=" + getLength() + '}';
   }
 }

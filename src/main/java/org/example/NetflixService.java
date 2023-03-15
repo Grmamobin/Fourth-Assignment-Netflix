@@ -11,7 +11,7 @@ class NetflixService  {
     ArrayList<Movie> movieList;
     private User user;
 
-    private NetflixService(){
+    public NetflixService(){
        this.userList = new ArrayList<>();
        this.tvShowList = new ArrayList<>();
        this.movieList= new ArrayList<>();
@@ -33,14 +33,16 @@ class NetflixService  {
 
         for( User user : userList )
         {
-            if(username.equalsIgnoreCase(user.getUsername())){
+            if(username.equalsIgnoreCase(user.getUsername()) && password.equalsIgnoreCase(user.getPassword())){
                 User user1 = new User(username , password);
                 userList.add(user1);
-                System.out.println("add successfully");
+                System.out.println("...........***...........................WELCOME New User...........***...........................");
                 return;
             }
 
         }
+        System.out.println("you already have an account");
+        return;
 
     }
 
@@ -49,8 +51,6 @@ class NetflixService  {
         for( User user : userList )
         {
             if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
-
-                System.out.println("you have an account");
                 return true;
             }
 

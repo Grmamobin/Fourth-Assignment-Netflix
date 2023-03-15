@@ -42,9 +42,10 @@ class User {
         watchHistoryList.add(tvShow);
     }
 
-    public void WatchHistory() {
+    public  ArrayList<TVShow> WatchHistory() {
         System.out.println("History :");
-        System.out.println(watchHistoryList);
+        return watchHistoryList;
+
     }
 
     public ArrayList<TVShow> searchByTitle(String title) {
@@ -112,4 +113,6 @@ class User {
                 ", movieList=" + movieList +
                 '}';
     }
+
+
 }

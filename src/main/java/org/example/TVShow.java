@@ -14,7 +14,7 @@ class TVShow {
     private String rating;
     ArrayList<String> cast;
 
-    public TVShow(String title , String genre ,int releaseYear , String duration , String rating ,
+    public TVShow(String title , String genre ,int releaseYear , String duration , String rating,
                   ArrayList<String> cast){
         this.title = title;
         this.genre = genre;
