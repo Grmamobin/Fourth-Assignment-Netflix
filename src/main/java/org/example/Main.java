@@ -41,6 +41,8 @@ public class Main {
         user.add(users);*/
 
         NetflixService netflixService = new NetflixService();
+        netflixService.addTVShow(tvshow);
+        netflixService.addMovie(movie);
         runMenu(netflixService);
         System.out.println();
 
@@ -65,7 +67,7 @@ public class Main {
         System.out.print("Password :"); String password = input.next();
 
         netflixService.createAccount(username ,password);
-        start(netflixService,username,password);
+        start(netflixService);
     }
     public static void LogIn(NetflixService netflixService){
 
@@ -76,7 +78,7 @@ public class Main {
         else{runMenu(netflixService);}
 
     }
-    public static void start(NetflixService netflixService , String username , String password){
+    public static void start(NetflixService netflixService ){
 
         System.out.println("----------------------------|----------------------------|-------------------------------|-------------------------------|");
         System.out.println("1_Search Movie by it's Title|2_Search Movie by it's genre|3_Search Movie by ReleaseYear  |4_ Watch History List          |");
@@ -86,7 +88,7 @@ public class Main {
         System.out.println("9_Log out                   |                            |                               |                               |");
         System.out.println("----------------------------|----------------------------|-------------------------------|-------------------------------|");
         int select = input.nextInt();
-        User user = new User(username ,password);
+        User user = new User();
         switch (select){
             case 1:
                 String title = input.next();
@@ -104,22 +106,23 @@ public class Main {
                     String duration = input.next();
                     System.out.print("rating =");
                     String rate = input.next();
+                    System.out.println("plz just write the  lead role ");
                     ArrayList<String> cas = new ArrayList<>();
                     cas.clear();
-                    /* System.out.print("cast =");  String cast = input.next();*/
-                    TVShow tvShow2 = new forSearching(title, genre, year, duration, rate ,cas);
-                    user.watchShow(tvShow2);
+                    TVShow tvShow2 = new TVShow(title, genre, year, duration, rate ,cas);
                     System.out.print("We recommend you some movie like your genre = ");
                     user.getRecommendations();
                     System.out.println("Do you want to add it to your favorite list?(y/n)");
                     ans = input.next();
+                    User user1 = new User();
                     if (ans.equals("y")) {
-                        user.addToFavorites(tvShow2);
+                        user1.addToFavorites(tvShow2);
+                        start(netflixService);
                     } else {
-                        start(netflixService,username,password);
+                        start(netflixService);
                     }
                 }
-                else{start(netflixService,username,password);}
+                else{start(netflixService);}
 
             case 2:
                 String genre = input.next();
@@ -145,13 +148,14 @@ public class Main {
                     user.getRecommendations();
                     System.out.println("Do you want to add it to your favorite list?(y/n)");
                     ans = input.next();
+
                     if (ans.equals("y")) {
                         user.addToFavorites(tvShow2);
                     } else {
-                        start(netflixService,username,password);
+                        start(netflixService);
                     }
                 }
-                else{start(netflixService,username,password);}
+                else{start(netflixService);}
 
             case 3:
                 int year = input.nextInt();
@@ -179,13 +183,14 @@ public class Main {
                     if (ans.equals("y")) {
                         user.addToFavorites(tvShow2);
                     } else {
-                        start(netflixService,username,password);
+                        start(netflixService);
                     }
                 }
-                else{start(netflixService,username,password);}
+                else{start(netflixService);}
 
             case 4:
                 System.out.println(user.WatchHistory());
+                start(netflixService);
             case 5:
                 System.out.println("1_Search Favorite Movie by it's Title\n2_Search Favorite Movie by it's genre\n3_Search Favorite Movie by ReleaseYear\n4_All of them");
                 System.out.print("select = "); int se = input.nextInt();

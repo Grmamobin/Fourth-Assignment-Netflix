@@ -14,7 +14,7 @@ class forSearching extends TVShow {
     @Override
     public String toString() {
         return "Movie{title=" + getTitle() + "    genre="+getGenre()+  "   releaseYear=" + getReleaseYear()+
-                "   duration="+getDuration()+"  rating="+getRating()+'}';
+                "   duration="+getDuration()+"  rating="+getRating()+ "cast = "+getCast()+'}';
     }
 
 }

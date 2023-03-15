@@ -31,29 +31,21 @@ class NetflixService  {
     public void createAccount(String username, String password) {
         // Implement create account logic here
 
-        for( User user : userList )
-        {
-            if(username.equalsIgnoreCase(user.getUsername()) && password.equalsIgnoreCase(user.getPassword())){
                 User user1 = new User(username , password);
                 userList.add(user1);
                 System.out.println("...........***...........................WELCOME New User...........***...........................");
                 return;
-            }
-
-        }
-        System.out.println("you already have an account");
-        return;
 
     }
 
     public boolean login(String username, String password) {
         // Implement login logic here
-        for( User user : userList )
+        for (User user : userList)
         {
-            if(username.equals(user.getUsername()) && password.equals(user.getPassword())){
+            if (user.getUsername().contains(username) && user.getPassword().contains(password))
+            {
                 return true;
             }
-
         }
 
         return false;

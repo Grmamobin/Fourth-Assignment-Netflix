@@ -18,8 +18,20 @@ class User {
     ArrayList<Movie> movieList;
 
     public User(String username , String password){
-        this.username = username;
-        this.password = password;
+        this.username =username;
+        this.password =password;
+
+    }
+    public User(){
+        /*this.username = username;
+        this.password = password;*/
+        this.favoriteShowList = new ArrayList<>();
+        this.watchHistoryList = new ArrayList<>();
+        this.userList = new ArrayList<>();
+        this.tvShowList = new ArrayList<>();
+        this.movieList = new ArrayList<>();
+
+
     }
 
     public String getUsername() {
@@ -45,7 +57,6 @@ class User {
     public  ArrayList<TVShow> WatchHistory() {
         System.out.println("History :");
         return watchHistoryList;
-
     }
 
     public ArrayList<TVShow> searchByTitle(String title) {
@@ -87,6 +98,7 @@ class User {
     public void addToFavorites(TVShow show) {
         // Implement add to favorites logic here
         favoriteShowList.add(show);
+        System.out.println("ADD SUCCESSFULLY");
 
     }
     public void viewFavorites() {
