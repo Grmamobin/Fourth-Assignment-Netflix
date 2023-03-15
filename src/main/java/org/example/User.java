@@ -99,4 +99,17 @@ class User {
         System.out.println("fiction movie / horror movie / drum movie / comedy / advanture");
       return null;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", favoriteShowList=" + favoriteShowList +
+                ", watchHistoryList=" + watchHistoryList +
+                ", userList=" + userList +
+                ", tvShowList=" + tvShowList +
+                ", movieList=" + movieList +
+                '}';
+    }
 }
