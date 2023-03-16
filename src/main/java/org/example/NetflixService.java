@@ -28,13 +28,25 @@ class NetflixService  {
         movieList.add(movie);
     }
 
-    public void createAccount(String username, String password) {
+    public boolean createAccount(String username, String password) {
         // Implement create account logic here
 
+           for( User user : userList){
+
+               if(user.getUsername().contains(username) && user.getPassword().contains(password)){
+                   System.out.println("can't Sign up cause you have an account");
+                   return false;
+               }
+               if(user.getUsername().contains(username)){
+                   System.out.println("plz change your username bc it's for another user ");
+                   return false;
+               }
+
+           }
                 User user1 = new User(username , password);
                 userList.add(user1);
                 System.out.println("...........***...........................WELCOME New User...........***...........................");
-                return;
+               return true;
 
     }
 
@@ -46,6 +58,7 @@ class NetflixService  {
             {
                 return true;
             }
+
         }
 
         return false;
@@ -104,7 +117,6 @@ class NetflixService  {
     public void setUser(User user) {
         this.user = user;
     }
-
     @Override
     public String toString() {
         return "NetflixService{" +

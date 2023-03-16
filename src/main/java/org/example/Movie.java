@@ -18,7 +18,6 @@ class Movie extends TVShow {
   public ArrayList<String> getLength() {
     return length;
   }
-
   @Override
   public String toString() {
     return "Movie{title=" + getTitle() + "    genre="+getGenre()+  "   releaseYear=" + getReleaseYear()+
