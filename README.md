@@ -12,6 +12,7 @@ For the bonus objectives, I added likes and dislikes for movies and performed in
 
 ## Project UML
 [![Screenshot-2023-03-18-at-13-26-08.png](https://i.postimg.cc/LXLKHPFj/Screenshot-2023-03-18-at-13-26-08.png)](https://postimg.cc/JDrdxGnh)
-[![Screenshot-2023-03-18-at-13-25-29.png](https://i.postimg.cc/FRRd89tt/Screenshot-2023-03-18-at-13-25-29.png)](https://postimg.cc/sBkgZCDK)
+[![Screenshot-2023-03-18-at-13-38-48.png](https://i.postimg.cc/3wYzMFXG/Screenshot-2023-03-18-at-13-38-48.png)](https://postimg.cc/k2YTK8hM)
+[![Screenshot-2023-03-18-at-13-39-48.png](https://i.postimg.cc/PrLBjqBt/Screenshot-2023-03-18-at-13-39-48.png)](https://postimg.cc/SJhZLmS5)
 ## Conclusion
 Although I did not include a graphical user interface (GUI) in this project due to time constraints and other projects, I plan to develop a GUI in the future. so if you want to revise it you can consider other factor.
