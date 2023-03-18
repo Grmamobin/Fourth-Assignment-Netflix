@@ -58,7 +58,7 @@ public class Main {
         System.out.print("Username :"); String username = input.next();
         System.out.print("Password :"); String password = input.next();
 
-        if(netflixService.createAccount(username ,password)){start(netflixService , username ,password);}
+        if(netflixService.createAccount(username ,password)){start(netflixService);}
         else{runMenu(netflixService);}
     }
     public static void LogIn(NetflixService netflixService ){
