@@ -221,7 +221,7 @@ public class Main {
                 }
 
             case 6:
-                System.out.print("Add new TV Show to NETFLIX app = ");
+                System.out.print("Add new TV Show to NETFLIX app  \n");
                 System.out.print("Title = ");
                  title = input.next();
                 System.out.print("genra = ");
@@ -232,27 +232,27 @@ public class Main {
                 String duration = input.next();
                 System.out.print("rating =");
                 String rate = input.next();
-                System.out.print("cast = ");
                 ArrayList<String> cast = new ArrayList<>();
                 String answ = "y";
                 String continues;
                 while(answ.equals("y")){
+                    System.out.print("cast =");
                     cast.add(input.next());
-                     System.out.println("Do you wanna continue?(y/n)");
-                     continues = input.next();
+                     System.out.print("Do you wanna continue?(y/n)");continues = input.next();
+
                     answ = continues;
                 }
-                answ.equals("y");
+                answ = "y";
                 ArrayList<String> length = new ArrayList<>();
-                System.out.println("length = ");
                 while (answ.equals("y")){
+                    System.out.print("length =");
                     length.add(input.next());
-                    System.out.println("Do you wanna continue?(y/n)");
-                    continues = input.next();
+                    System.out.print("Do you wanna continue?(y/n)");continues = input.next();
                     answ = continues;
                 }
                 TVShow tvShow = new Movie(title,genra,year,duration,rate ,cast ,length);
-                netflixService.addTVShow(tvShow);
+                netflixService.addTVShow(tvShow);System.out.println("ADD successfully");
+                start(netflixService ,username,password);
 
             case 7:
                 System.out.print("Add new Movie to NETFLIX app = ");
@@ -272,19 +272,21 @@ public class Main {
                 while(answ.equals("y")){
                     casts.add(input.next());
                     System.out.println("Do you wanna continue?(y/n)");
+                    System.out.print("\ncast =");
                 }
-                answ.equals("y");
+                 answ ="y";
                 ArrayList<String> lengths = new ArrayList<>();
                 while (answ.equals("y")){
                     lengths.add(input.next());
                     System.out.println("Do you wanna continue?(y/n)");
+                    System.out.print("\ncast =");
                 }
                 TVShow tvShow3 = new Movie(title,genra,year,duration,rate ,casts ,lengths);
                 netflixService.addTVShow(tvShow3);
 
             case 8:
                 netflixService.logout();
-
+                runMenu(netflixService);
 
 
         }
