@@ -68,12 +68,12 @@ public class Main {
 
         if(netflixService.login(username, password)){
             System.out.println("...........***...........................WELCOME BACK...........***...........................");
-            start(netflixService ,username,password);
+            start(netflixService);
         }
         else{runMenu(netflixService);}
 
     }
-    public static void start(NetflixService netflixService ,String username , String password ){
+    public static void start(NetflixService netflixService ){
 
         System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
         System.out.println("1_Search Tv show/Movie by it's Title      |2_Search Tv show/Movie by it's genre      |3_Search Tv show/Movie by ReleaseYear        |4_ Watch History List          |");
@@ -116,12 +116,12 @@ public class Main {
 
                         if (ans.equals("y")) {
                             netflixService.getCurrentUser().addToFavorites(tvShow2);
-                            start(netflixService, username, password);
+                            start(netflixService);
                         } else {
-                            start(netflixService, username, password);
+                            start(netflixService);
                         }
                     } else {
-                        start(netflixService, username, password);
+                        start(netflixService);
                     }
 
             case 2://find tv show/movie by genre
@@ -155,12 +155,12 @@ public class Main {
 
                     if (ans.equals("y")) {
                         netflixService.getCurrentUser().addToFavorites(tvShow2);
-                        start(netflixService ,username ,password);
+                        start(netflixService);
                     } else {
-                        start(netflixService ,username ,password);
+                        start(netflixService );
                     }
                 }
-                else{start(netflixService ,username ,password);}
+                else{start(netflixService );}
 
             case 3://find tv show/movie with release year
                 int year = input.nextInt();
@@ -192,16 +192,16 @@ public class Main {
 
                     if (ans.equals("y")) {
                         netflixService.getCurrentUser().addToFavorites(tvShow2);
-                        start(netflixService ,username ,password);
+                        start(netflixService );
                     } else {
-                        start(netflixService ,username ,password);
+                        start(netflixService );
                     }
                 }
-                else{start(netflixService ,username ,password);}
+                else{start(netflixService);}
 
             case 4://history of movie that you click on
                 System.out.println(netflixService.getCurrentUser().watchHistoryList);
-                start(netflixService,username,password);
+                start(netflixService);
             case 5://search by title or genera or releaseYear or all of them
                 System.out.println("1_Search Favorite Movie by it's Title\n2_Search Favorite Movie by it's genre\n3_Search Favorite Movie by ReleaseYear\n4_All of them");
                 System.out.print("select = "); int se = input.nextInt();
@@ -210,21 +210,21 @@ public class Main {
                          title = input.next();
                         System.out.println(netflixService.getCurrentUser().searchByTitle(title));
                         System.out.println("If you want to take out of this part press'1'"); int cl =input.nextInt();
-                        if(cl == 1){start(netflixService ,username,password);}
+                        if(cl == 1){start(netflixService );}
                     case 2:
                         genre = input.next();
                         System.out.println(netflixService.getCurrentUser().searchByGenre(genre));
                         System.out.println("If you want to take out of this part press'1'"); cl =input.nextInt();
-                        if(cl == 1){start(netflixService ,username,password);}
+                        if(cl == 1){start(netflixService);}
                     case 3:
                         year = input.nextInt();
                         System.out.println(netflixService.getCurrentUser().searchByReleaseYear(year));
                         System.out.println("If you want to take out of this part press'1'");  cl =input.nextInt();
-                        if(cl == 1){start(netflixService ,username,password);}
+                        if(cl == 1){start(netflixService );}
                     case 4:
                         netflixService.getCurrentUser().viewFavorites();
                         System.out.println("If you want to take out of this part press'1'");  cl =input.nextInt();
-                        if(cl == 1){start(netflixService ,username,password);}
+                        if(cl == 1){start(netflixService );}
                 }
             case 6: //add films or movie
                 System.out.print("Add new TV Show/Movie to NETFLIX app  \n");
@@ -258,7 +258,7 @@ public class Main {
                 }
                 TVShow tvShow = new Movie(title,genra,year,duration,rate ,cast ,length);
                 netflixService.addTVShow(tvShow);System.out.println("ADD successfully");
-                start(netflixService ,username,password);
+                start(netflixService );
 
 
             case 7://log out from ur page
@@ -271,7 +271,7 @@ public class Main {
                 System.out.print("total Dislike =");System.out.print(netflixService.getCurrentUser().DisLikeList.size()+"\n");
                 System.out.print("total Like =");System.out.print(netflixService.getCurrentUser().LikeList.size()+"\n");
                 System.out.println("If you want to take out of this part press'1'");  int click =input.nextInt();
-                if(click == 1){start(netflixService ,username,password);}
+                if(click == 1){start(netflixService );}
         }
 
     }
