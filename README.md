@@ -4,7 +4,7 @@
 ## Introduction
 In this assignment, I created a simulation of Netflix. The program allow users to create and manage their accounts and profiles, browse movies, and manage their movies. The program  designed by using object-oriented programming principles.
 ##  Summary
-In this project, I used different methods to build a movie/tv show recommendation system. In the <<Main>> part, I declared the background colour and created a menu that includes login, sign in, and exit options to leave the entire program.
+In this project, I used different methods to build a movie/tv show recommendation system. In the << Main >> part, I declared the background colour and created a menu that includes login, sign in, and exit options to leave the entire program.
 The Netflix menu allows users to search for movie titles .  and add movies to their favourites list, and add movies to their history if they answer 'yes' to watching them. Another selection in the menu allows users to add new movies or tv shows.
 After watching movies, users can see recommendations based on their preferred movie genre. One important aspect of the project is that movies extend to the TV show class because movies are similar to TV shows but have a length.
 ## Bonus Objectives
