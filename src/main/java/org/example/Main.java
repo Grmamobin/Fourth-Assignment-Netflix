@@ -78,7 +78,7 @@ public class Main {
         System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
         System.out.println("1_Search Tv show/Movie by it's Title      |2_Search Tv show/Movie by it's genre      |3_Search Tv show/Movie by ReleaseYear        |4_ Watch History List          |");
         System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
-        System.out.println("5_ View Favorite Movies/Tv show           |6_Add TV Show/movie to Playlist           |7_Log out                                    |                               |");
+        System.out.println("5_ View Favorite Movies/Tv show           |6_Add TV Show/movie to Playlist           |7_Log out                                    |8_see like and dislike list     |");
         System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
         int select = input.nextInt();
 
@@ -104,6 +104,9 @@ public class Main {
                         ArrayList<String> cas = new ArrayList<>();
                         cas.clear();
                         TVShow tvShow2 = new TVShow(title, genre, year, duration, rate, cas);
+                        System.out.println("DisLike or Like"); String choose = input.next();
+                        if(choose.equals("DisLike")){netflixService.getCurrentUser().addDislike(tvShow2);}
+                        if(choose.equals("Like")){netflixService.getCurrentUser().addLike(tvShow2);}
 
                         netflixService.getCurrentUser().addHistory(tvShow2);
 
@@ -140,6 +143,9 @@ public class Main {
                     cas.clear();
 
                     TVShow tvShow2 = new TVShow(title, genre, year, duration, rate ,cas);
+                    System.out.println("DisLike or Like"); String choose = input.next();
+                    if(choose.equals("DisLike")){netflixService.getCurrentUser().addDislike(tvShow2);}
+                    if(choose.equals("Like")){netflixService.getCurrentUser().addLike(tvShow2);}
 
                     netflixService.getCurrentUser().addHistory(tvShow2);
 
@@ -174,6 +180,9 @@ public class Main {
                     ArrayList<String> cas = new ArrayList<>();
                     cas.clear();
                     TVShow tvShow2 = new TVShow(title, genre, year, duration, rate ,cas);
+                    System.out.println("DisLike or Like"); String choose = input.next();
+                    if(choose.equals("DisLike")){netflixService.getCurrentUser().addDislike(tvShow2);}
+                    if(choose.equals("Like")){netflixService.getCurrentUser().addLike(tvShow2);}
 
                     netflixService.getCurrentUser().addHistory(tvShow2);
 
@@ -252,10 +261,17 @@ public class Main {
                 start(netflixService ,username,password);
 
 
-
             case 7://log out from ur page
                 netflixService.logout();
                 runMenu(netflixService);
+
+            case 8:
+                System.out.println("DisLike List = ");System.out.println(netflixService.getCurrentUser().DisLikeList);
+                System.out.println("Like List = ");System.out.println(netflixService.getCurrentUser().LikeList);
+                System.out.print("total Dislike =");System.out.print(netflixService.getCurrentUser().DisLikeList.size()+"\n");
+                System.out.print("total Like =");System.out.print(netflixService.getCurrentUser().LikeList.size()+"\n");
+                System.out.println("If you want to take out of this part press'1'");  int click =input.nextInt();
+                if(click == 1){start(netflixService ,username,password);}
         }
 
     }

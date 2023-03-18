@@ -14,6 +14,8 @@ class User {
     ArrayList<User> userList;
     ArrayList<TVShow> favoriteShowList;
     ArrayList<TVShow> watchHistoryList;
+    ArrayList<TVShow> LikeList;
+    ArrayList<TVShow> DisLikeList;
 
     public User(String username , String password){
         this.username =username;
@@ -21,6 +23,8 @@ class User {
         this.favoriteShowList = new ArrayList<>() ;
         this.watchHistoryList =  new ArrayList<>();
         this.userList =  new ArrayList<>();
+        this.DisLikeList =new ArrayList<>();
+        this.LikeList = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -135,6 +139,8 @@ class User {
     }
 
     public void addHistory(TVShow tvShow){watchHistoryList.add(tvShow);}
+    public void addLike(TVShow tvShow){LikeList.add(tvShow);}
+    public  void addDislike(TVShow tvShow){DisLikeList.add(tvShow);}
 
     @Override
     public String toString() {
