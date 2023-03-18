@@ -6,17 +6,16 @@ class NetflixService  {
      *The NetflixService should have an Arraylist of users, tv shows and movies.
      *The NetflixService should have a User object which represents current user.
      */
-    ArrayList<User> userList;
-    ArrayList<TVShow> tvShowList;
-    ArrayList<Movie> movieList;
-    private User user;
-
-    public NetflixService(){
-       this.userList = new ArrayList<>();
-       this.tvShowList = new ArrayList<>();
-       this.movieList= new ArrayList<>();
+    ArrayList<User> userList = new ArrayList<>();
+    static ArrayList<TVShow> tvShowList = new ArrayList<>();
+    static ArrayList<Movie> movieList = new ArrayList<>();
+    private User currentUser;
+    public NetflixService() {
+        currentUser = new User("", "");
     }
-
+    public NetflixService(User currentUser){
+        this.currentUser = currentUser;
+    }
     public void addTVShow(TVShow tvShow){
         // Implement add tv show logic here
         tvShowList.add(tvShow);
@@ -56,6 +55,7 @@ class NetflixService  {
         {
             if (user.getUsername().contains(username) && user.getPassword().contains(password))
             {
+                setCurrentUser(user);
                 return true;
             }
 
@@ -67,6 +67,7 @@ class NetflixService  {
     public void logout() {
         // Implement logout logic here
         System.out.println("Hop you're Entertaining");
+        this.currentUser = null;
         return;
     }
 
@@ -84,17 +85,43 @@ class NetflixService  {
 
     }
 
-    public ArrayList<TVShow> searchByGenre(String genre) {
+    public ArrayList<Movie> searchByTitles(String title) {
+        // Implement search by title logic here
+        ArrayList<Movie> result = new ArrayList<>();
+        for (Movie movie : movieList)
+        {
+            if(title.compareTo(movie.getTitle())== 0)
+            {
+                result.add(movie);
+            }
+        }
+        return result;
+
+    }
+
+
+    public ArrayList<TVShow>  searchByGenre(String genre) {
         // Implement search by genre logic here
         ArrayList<TVShow> result = new ArrayList<>();
-        for (TVShow tvShow : tvShowList)
-        {
-            if(genre.compareTo(tvShow.getGenre())== 0)
-            {
+        for (TVShow tvShow : tvShowList) {
+            if (genre.compareTo(tvShow.getGenre()) == 0) {
                 result.add(tvShow);
             }
         }
         return result;
+    }
+    public ArrayList<Movie> searchByGenres(String title) {
+        // Implement search by title logic here
+        ArrayList<Movie> result = new ArrayList<>();
+        for (Movie movie : movieList)
+        {
+            if(title.compareTo(movie.getTitle())== 0)
+            {
+                result.add(movie);
+            }
+        }
+        return result;
+
     }
 
     public ArrayList<TVShow> searchByReleaseYear(int year) {
@@ -110,20 +137,20 @@ class NetflixService  {
         return result;
     }
 
-    public User getUser() {
-        return user;
+    public User getCurrentUser() {
+        return currentUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
+
     @Override
     public String toString() {
         return "NetflixService{" +
                 "userList=" + userList +
                 ", tvShowList=" + tvShowList +
                 ", movieList=" + movieList +
-                ", user=" + user +
                 '}';
     }
 }

@@ -12,15 +12,15 @@ class User {
     private String username;
     private String password;
     ArrayList<User> userList;
-    ArrayList<TVShow> favoriteShowList ;
-    ArrayList<TVShow> watchHistoryList ;
+    ArrayList<TVShow> favoriteShowList;
+    ArrayList<TVShow> watchHistoryList;
 
     public User(String username , String password){
         this.username =username;
         this.password =password;
-        this.favoriteShowList = new ArrayList<>();
-        this.watchHistoryList = new ArrayList<>();
-        this.userList = new ArrayList<>();
+        this.favoriteShowList = new ArrayList<>() ;
+        this.watchHistoryList =  new ArrayList<>();
+        this.userList =  new ArrayList<>();
     }
 
     public String getUsername() {
