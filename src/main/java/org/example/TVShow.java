@@ -24,7 +24,6 @@ class TVShow {
         this.cast = cast;
     }
 
-
     public String getTitle() {
         return title;
     }

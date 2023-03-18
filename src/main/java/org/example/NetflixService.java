@@ -85,21 +85,6 @@ class NetflixService  {
 
     }
 
-    public ArrayList<Movie> searchByTitles(String title) {
-        // Implement search by title logic here
-        ArrayList<Movie> result = new ArrayList<>();
-        for (Movie movie : movieList)
-        {
-            if(title.compareTo(movie.getTitle())== 0)
-            {
-                result.add(movie);
-            }
-        }
-        return result;
-
-    }
-
-
     public ArrayList<TVShow>  searchByGenre(String genre) {
         // Implement search by genre logic here
         ArrayList<TVShow> result = new ArrayList<>();
@@ -109,19 +94,6 @@ class NetflixService  {
             }
         }
         return result;
-    }
-    public ArrayList<Movie> searchByGenres(String title) {
-        // Implement search by title logic here
-        ArrayList<Movie> result = new ArrayList<>();
-        for (Movie movie : movieList)
-        {
-            if(title.compareTo(movie.getTitle())== 0)
-            {
-                result.add(movie);
-            }
-        }
-        return result;
-
     }
 
     public ArrayList<TVShow> searchByReleaseYear(int year) {

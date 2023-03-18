@@ -6,7 +6,7 @@ class Movie extends TVShow {
   /*
    *Movie is extended from TVShow and has extra attribute length.
    */
-  private final ArrayList<String> length;
+  private final ArrayList<String> length; // length means film episode
 
   public Movie(String title , String genre , int releaseYear , String duration , String rating , ArrayList<String> cast,ArrayList<String> length) {
 

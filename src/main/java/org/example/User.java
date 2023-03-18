@@ -63,6 +63,7 @@ class User {
         }
         return result;
     }
+
     public ArrayList<TVShow> searchByGenre(String genre) {
         // Implement search by genre in favorite shows  logic here
         ArrayList<TVShow> result = new ArrayList<>();
@@ -75,6 +76,7 @@ class User {
         }
         return result;
     }
+
     public ArrayList<TVShow> searchByReleaseYear(int year) {
         // Implement search by release year in favorite shows logic here
         ArrayList<TVShow> result = new ArrayList<>();
@@ -87,11 +89,13 @@ class User {
         }
         return result;
     }
+
     public void addToFavorites(TVShow show) {
         // Implement add to favorites logic here
         favoriteShowList.add(show);
         System.out.println("ADD SUCCESSFULLY");
     }
+
     public void addToFavoritess(Movie show) {
         // Implement add to favorites logic here
         favoriteShowList.add(show);
@@ -110,6 +114,7 @@ class User {
         // Implement view favorites logic here
         System.out.print("Your favorites are :\n" + favoriteShowList);
     }
+
     public ArrayList<TVShow> getRecommendations(String genre) {
         //recommend on this movie is base on the genre of movie that person saw
         System.out.println("************************* Suggested Movie *************************");
@@ -128,20 +133,8 @@ class User {
         }
       return null;
     }
-    public void addHistory(TVShow tvShow){
-        watchHistoryList.add(tvShow);
-    }
-    public void addFavorit(TVShow tvShow){
-        favoriteShowList.add(tvShow);
-    }
-    public void addHistory(Movie movie){
-        watchHistoryList.add(movie);
-    }
-    public void addFavorit(Movie movie){
-        favoriteShowList.add(movie);
-    }
 
-
+    public void addHistory(TVShow tvShow){watchHistoryList.add(tvShow);}
 
     @Override
     public String toString() {

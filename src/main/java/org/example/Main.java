@@ -7,7 +7,7 @@ public class Main {
     public static final String ANSI_RED_BACKGROUND
             = "\u001B[41m";
     public static Scanner input = new Scanner(System.in);
-     public static NetflixService netflixService = new NetflixService();
+    public static NetflixService netflixService = new NetflixService();
 
 
     public static void main(String[] args) {
@@ -22,9 +22,9 @@ public class Main {
         ArrayList<String>Length = new ArrayList<>();
         Length.add("1 Episode");
 
-        Movie movie = new Movie("Shutter Island" , "psychology" , 2010 , "2:20" , "8.5/10" ,TopCast , Length);
-        NetflixService.movieList.add(movie);
-
+        TVShow movie = new Movie("ShutterIsland" , "psychology" , 2010 , "2:20" , "8.5/10" ,TopCast , Length);
+        NetflixService.tvShowList.add(movie); //took all movies and tvshows to ----> tvshow's arraylist
+//....................................................................................................................................................
         ArrayList<String> TopCast2 = new ArrayList<>();
         TopCast2.add("Jenna Ortega");
         TopCast2.add("Hunter Doohan");
@@ -38,10 +38,8 @@ public class Main {
 
         TVShow tvshow = new Movie("wednesday","Mystery",2022 ,"7:15" ,"8.1/10" ,TopCast2 ,Length2);
         NetflixService.tvShowList.add(tvshow);
-
+//....................................................................................................................................................
         runMenu(netflixService);
-        System.out.println();
-
     }
 
     public static void runMenu(NetflixService netflixService){
@@ -77,23 +75,23 @@ public class Main {
     }
     public static void start(NetflixService netflixService ,String username , String password ){
 
-        System.out.println("------------------------------------|------------------------------------|---------------------------------------|-------------------------------|");
-        System.out.println("1_Search Movie/Tv show by it's Title|2_Search Movie/Tv show by it's genre|3_Search Movie/Tv show by ReleaseYear  |4_ Watch History List          |");
-        System.out.println("------------------------------------|------------------------------------|---------------------------------------|-------------------------------|");
-        System.out.println("5_ View Favorite Movies/Tv show     |6_Add TV Show to Playlist           |7_ADD Movie to Netflix Playlist        |8_Log out                      |");
-        System.out.println("------------------------------------|------------------------------------|---------------------------------------|-------------------------------|");
+        System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
+        System.out.println("1_Search Tv show/Movie by it's Title      |2_Search Tv show/Movie by it's genre      |3_Search Tv show/Movie by ReleaseYear        |4_ Watch History List          |");
+        System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
+        System.out.println("5_ View Favorite Movies/Tv show           |6_Add TV Show/movie to Playlist           |7_Log out                                    |                               |");
+        System.out.println("------------------------------------------|------------------------------------------|---------------------------------------------|-------------------------------|");
         int select = input.nextInt();
-        User user = new User(username , password);
+
         switch (select){
-            case 1:
-                    System.out.print("Tv Show = ");
+            case 1: //find tv show/movie by title
+
                     String title = input.next();
                     System.out.println(netflixService.searchByTitle(title));
 
                     System.out.println("Do you want to watch that movie?(y/n)");
                     String ans = input.next();
                     if (ans.equals("y")) {
-                        System.out.println("please write another info of the film between so many films plz");
+                        System.out.println("Can you please provide additional information about a specific film among the many available?");
                         System.out.print("genre = ");
                         String genre = input.next();
                         System.out.print("Release Year = ");
@@ -123,13 +121,13 @@ public class Main {
                         start(netflixService, username, password);
                     }
 
-            case 2:
+            case 2://find tv show/movie by genre
                 String genre = input.next();
                 System.out.println(netflixService.searchByGenre(genre));
 
                 System.out.println("Do you want to watch that movie?(y/n)");  ans = input.next();
                 if(ans.equals("y")) {
-                    System.out.println("please write another info of the film plz");
+                    System.out.println("Can you please provide additional information about a specific film among the many available?");
                     System.out.print("title = ");
                      title = input.next();
                     System.out.print("Release Year = ");
@@ -158,13 +156,13 @@ public class Main {
                 }
                 else{start(netflixService ,username ,password);}
 
-            case 3:
+            case 3://find tv show/movie with release year
                 int year = input.nextInt();
                 System.out.println(netflixService.searchByReleaseYear(year));
 
                 System.out.println("Do you want to watch that movie?(y/n)"); ans = input.next();
                 if(ans.equals("y")) {
-                    System.out.println("please write another info of the film plz");
+                    System.out.println("Can you please provide additional information about a specific film among the many available?");
                     System.out.print("title = ");
                      title = input.next();
                     System.out.print("genre = ");
@@ -192,10 +190,10 @@ public class Main {
                 }
                 else{start(netflixService ,username ,password);}
 
-            case 4:
+            case 4://history of movie that you click on
                 System.out.println(netflixService.getCurrentUser().watchHistoryList);
                 start(netflixService,username,password);
-            case 5:
+            case 5://search by title or genera or releaseYear or all of them
                 System.out.println("1_Search Favorite Movie by it's Title\n2_Search Favorite Movie by it's genre\n3_Search Favorite Movie by ReleaseYear\n4_All of them");
                 System.out.print("select = "); int se = input.nextInt();
                 switch (se){
@@ -219,11 +217,10 @@ public class Main {
                         System.out.println("If you want to take out of this part press'1'");  cl =input.nextInt();
                         if(cl == 1){start(netflixService ,username,password);}
                 }
-
-            case 6:
-                System.out.print("Add new TV Show to NETFLIX app  \n");
+            case 6: //add films or movie
+                System.out.print("Add new TV Show/Movie to NETFLIX app  \n");
                 System.out.print("Title = ");
-                 title = input.next();
+                title = input.next();
                 System.out.print("genra = ");
                 String genra = input.next();
                 System.out.print("Release Year = ");
@@ -238,7 +235,7 @@ public class Main {
                 while(answ.equals("y")){
                     System.out.print("cast =");
                     cast.add(input.next());
-                     System.out.print("Do you wanna continue?(y/n)");continues = input.next();
+                    System.out.print("Do you wanna continue?(y/n)");continues = input.next();
 
                     answ = continues;
                 }
@@ -254,41 +251,11 @@ public class Main {
                 netflixService.addTVShow(tvShow);System.out.println("ADD successfully");
                 start(netflixService ,username,password);
 
-            case 7:
-                System.out.print("Add new Movie to NETFLIX app = ");
-                System.out.print("Title = ");
-                title = input.next();
-                System.out.print("genra = ");
-                genra = input.next();
-                System.out.print("Release Year = ");
-                year = input.nextInt();
-                System.out.print("duration = ");
-                duration = input.next();
-                System.out.print("rating =");
-                rate = input.next();
-                System.out.print("cast = ");
-                ArrayList<String> casts = new ArrayList<>();
-                answ = "y";
-                while(answ.equals("y")){
-                    casts.add(input.next());
-                    System.out.println("Do you wanna continue?(y/n)");
-                    System.out.print("\ncast =");
-                }
-                 answ ="y";
-                ArrayList<String> lengths = new ArrayList<>();
-                while (answ.equals("y")){
-                    lengths.add(input.next());
-                    System.out.println("Do you wanna continue?(y/n)");
-                    System.out.print("\ncast =");
-                }
-                TVShow tvShow3 = new Movie(title,genra,year,duration,rate ,casts ,lengths);
-                netflixService.addTVShow(tvShow3);
 
-            case 8:
+
+            case 7://log out from ur page
                 netflixService.logout();
                 runMenu(netflixService);
-
-
         }
 
     }
