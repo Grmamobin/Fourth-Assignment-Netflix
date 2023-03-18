@@ -92,6 +92,11 @@ class User {
         favoriteShowList.add(show);
         System.out.println("ADD SUCCESSFULLY");
     }
+    public void addToFavoritess(Movie show) {
+        // Implement add to favorites logic here
+        favoriteShowList.add(show);
+        System.out.println("ADD SUCCESSFULLY");
+    }
 
     public ArrayList<TVShow> getFavoriteShowList() {
         return favoriteShowList;
