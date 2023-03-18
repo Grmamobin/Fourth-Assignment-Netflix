@@ -10,7 +10,7 @@ After watching movies, users can see recommendations based on their preferred mo
 ## Bonus Objectives
 For the bonus objectives, I added likes and dislikes for movies and performed input validation.
 
-## Project UML
+## UML
 [![Screenshot-2023-03-18-at-13-26-08.png](https://i.postimg.cc/LXLKHPFj/Screenshot-2023-03-18-at-13-26-08.png)](https://postimg.cc/JDrdxGnh)
 [![Screenshot-2023-03-18-at-13-38-48.png](https://i.postimg.cc/3wYzMFXG/Screenshot-2023-03-18-at-13-38-48.png)](https://postimg.cc/k2YTK8hM)
 [![Screenshot-2023-03-18-at-13-39-48.png](https://i.postimg.cc/PrLBjqBt/Screenshot-2023-03-18-at-13-39-48.png)](https://postimg.cc/SJhZLmS5)
