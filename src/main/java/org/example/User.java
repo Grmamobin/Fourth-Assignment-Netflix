@@ -125,7 +125,7 @@ class User {
         if(genre.equals("Mystery")){
             System.out.print("The Woman In the Window\nMurder Mystery\nKnives out\n");
         }
-        if(genre.equals("Psychology/Fiction")){
+        if(genre.equals("Psychology")){
               System.out.print("Seven\nFight Club\nBlack Swan\n");
         }
         System.out.println("************************* Suggested TV Show *************************");
